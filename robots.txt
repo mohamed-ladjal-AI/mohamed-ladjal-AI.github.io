@@ -1,0 +1,5 @@
+# filepath: c:\Users\moham\Desktop\New folder\robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://mohamedladjal.com/sitemap.xml

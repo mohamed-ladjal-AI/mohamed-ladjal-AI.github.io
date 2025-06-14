@@ -1,0 +1,191 @@
+/* 
+ * Dashboard Visualization Styles
+ * Styles for the AI metrics dashboard with glassmorphism
+ */
+
+/* Dashboard Container */
+.dashboard-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-lg);
+  margin: var(--space-xl) 0;
+}
+
+/* Dashboard Cards */
+.dashboard-card {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+}
+
+.dashboard-card h3 {
+  margin-top: 0;
+  margin-bottom: var(--space-md);
+  font-size: 1.25rem;
+  position: relative;
+  padding-bottom: var(--space-sm);
+}
+
+.dashboard-card h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: var(--border-radius-full);
+}
+
+/* Metrics Circles */
+.metrics-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-grow: 1;
+  margin-top: var(--space-md);
+}
+
+.metric-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.metric-circle {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.metric-circle svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.metric-circle circle {
+  fill: none;
+  stroke-width: 8;
+  stroke-linecap: round;
+}
+
+.metric-circle circle.bg {
+  stroke: rgba(var(--primary-rgb), 0.1);
+}
+
+.metric-circle circle.progress {
+  stroke: var(--primary);
+  transition: stroke-dashoffset 1s ease;
+}
+
+.metric-circle .percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.metric-circle .percentage span {
+  font-size: 0.75rem;
+}
+
+.metric-label {
+  margin-top: var(--space-sm);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Activity Visualization */
+.activity-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.activity-canvas {
+  flex-grow: 1;
+  width: 100%;
+  background: transparent;
+}
+
+.activity-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--space-sm);
+}
+
+.activity-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-align: center;
+  flex: 1;
+}
+
+/* Progress Chart */
+.progress-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.progress-chart {
+  flex-grow: 1;
+  margin-bottom: var(--space-md);
+}
+
+.progress-canvas {
+  width: 100%;
+  background: transparent;
+}
+
+.progress-stats {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stat {
+  text-align: center;
+  flex: 1;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.stat-value {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .metrics-container {
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+  
+  .metric-circle {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .metric-circle .percentage {
+    font-size: 1.2rem;
+  }
+}
+
+/* Dark Theme Adjustments */
+[data-theme="dark"] .metric-circle circle.bg {
+  stroke: rgba(var(--primary-rgb), 0.2);
+}
+
+[data-theme="dark"] .stat-value {
+  color: var(--text-inverted);
+}

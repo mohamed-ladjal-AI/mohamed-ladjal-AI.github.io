@@ -1,0 +1,199 @@
+/* 
+ * Light Mode Glass Enhancements
+ * Special effects to make glassmorphism more visible in light mode
+ */
+
+/* Light Mode Pattern Background */
+body:not([data-theme="dark"]) .bg-pattern {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    repeating-linear-gradient(45deg, rgba(99, 102, 241, 0.03) 0, rgba(99, 102, 241, 0.03) 1px, transparent 0, transparent 50%);
+  background-size: 20px 20px;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Enhanced Glass Cards for Light Mode */
+body:not([data-theme="dark"]) .glass-card {
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.05),
+    0 2px 4px -1px rgba(0, 0, 0, 0.03),
+    0 -2px 0 0 rgba(255, 255, 255, 0.6) inset,
+    0 1px 0 0 rgba(14, 165, 233, 0.05) inset;
+  background: linear-gradient(
+    135deg, 
+    rgba(255, 255, 255, 0.8) 0%, 
+    rgba(255, 255, 255, 0.6) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-right-color: rgba(99, 102, 241, 0.1);
+  border-bottom-color: rgba(99, 102, 241, 0.1);
+}
+
+/* Light Mode Glass Card Hover */
+body:not([data-theme="dark"]) .glass-card:hover {
+  box-shadow: 
+    0 10px 15px -3px rgba(0, 0, 0, 0.08),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05),
+    0 -2px 0 0 rgba(255, 255, 255, 0.8) inset,
+    0 1px 0 0 rgba(14, 165, 233, 0.08) inset;
+  border-color: rgba(99, 102, 241, 0.2);
+}
+
+/* Light Mode Glass Navigation */
+body:not([data-theme="dark"]) .glass-nav {
+  background: linear-gradient(
+    180deg, 
+    rgba(255, 255, 255, 0.9) 0%, 
+    rgba(255, 255, 255, 0.8) 100%
+  );
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.05),
+    0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+/* Light Mode Glass Input */
+body:not([data-theme="dark"]) .glass-input {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
+}
+
+body:not([data-theme="dark"]) .glass-input:focus {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* Light Mode Glass Containers */
+body:not([data-theme="dark"]) .glass-container {
+  background: linear-gradient(
+    135deg, 
+    rgba(255, 255, 255, 0.8) 0%, 
+    rgba(255, 255, 255, 0.6) 100%
+  );
+  box-shadow: 
+    0 10px 15px -3px rgba(0, 0, 0, 0.08),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05),
+    0 -1px 0 0 rgba(255, 255, 255, 0.6) inset;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-right-color: rgba(99, 102, 241, 0.1);
+  border-bottom-color: rgba(99, 102, 241, 0.1);
+}
+
+/* Light Mode Section Headers */
+body:not([data-theme="dark"]) .glass-section-header::after {
+  box-shadow: 0 2px 4px rgba(99, 102, 241, 0.2);
+}
+
+/* Enhanced Light Mode Hover Effects */
+body:not([data-theme="dark"]) .glass-shimmer::after {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+}
+
+/* Light Mode Hero Section Enhancement */
+body:not([data-theme="dark"]) .glass-hero::before {
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-right-color: rgba(99, 102, 241, 0.1);
+  border-bottom-color: rgba(99, 102, 241, 0.1);  background: linear-gradient(
+    135deg, 
+    rgba(255, 255, 255, 0.9) 0%, 
+    rgba(255, 255, 255, 0.7) 100%
+  );
+}
+
+/* Gallery Card Enhancements for Light Mode */
+body:not([data-theme="dark"]) .gallery-card {
+  box-shadow: 
+    0 10px 20px -5px rgba(0, 0, 0, 0.08),
+    0 4px 10px -2px rgba(0, 0, 0, 0.05),
+    0 -2px 0 0 rgba(255, 255, 255, 0.7) inset;
+  background: linear-gradient(
+    135deg, 
+    rgba(255, 255, 255, 0.85) 0%, 
+    rgba(255, 255, 255, 0.65) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-right-color: rgba(99, 102, 241, 0.15);
+  border-bottom-color: rgba(99, 102, 241, 0.15);
+}
+
+body:not([data-theme="dark"]) .gallery-card:hover {
+  box-shadow: 
+    0 15px 30px -5px rgba(0, 0, 0, 0.12),
+    0 8px 15px -3px rgba(0, 0, 0, 0.08),
+    0 -2px 0 0 rgba(255, 255, 255, 0.8) inset;
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+body:not([data-theme="dark"]) .gallery-content {
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.8) 40%,
+    rgba(255, 255, 255, 0.4) 80%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  color: var(--text);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+body:not([data-theme="dark"]) .gallery-link {
+  color: var(--primary);
+}
+
+body:not([data-theme="dark"]) .gallery-link:hover {
+  color: var(--primary-dark);
+}
+
+body:not([data-theme="dark"]) .gallery-tag {
+  background-color: rgba(99, 102, 241, 0.2);
+  color: var(--primary-dark);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+/* Filter Button Enhancements for Light Mode */
+body:not([data-theme="dark"]) .filter-btn {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-right-color: rgba(99, 102, 241, 0.1);
+  border-bottom-color: rgba(99, 102, 241, 0.1);
+  box-shadow: 
+    0 2px 5px rgba(0, 0, 0, 0.05),
+    0 -1px 0 0 rgba(255, 255, 255, 0.6) inset;
+}
+
+body:not([data-theme="dark"]) .filter-btn:hover,
+body:not([data-theme="dark"]) .filter-btn.active {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+  border-color: var(--primary);
+}
+
+/* Modal Enhancements for Light Mode */
+body:not([data-theme="dark"]) .modal-content {
+  background: linear-gradient(
+    135deg, 
+    rgba(255, 255, 255, 0.95) 0%, 
+    rgba(255, 255, 255, 0.85) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-right-color: rgba(99, 102, 241, 0.15);
+  border-bottom-color: rgba(99, 102, 241, 0.15);
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.15),
+    0 -2px 0 0 rgba(255, 255, 255, 0.7) inset;
+}

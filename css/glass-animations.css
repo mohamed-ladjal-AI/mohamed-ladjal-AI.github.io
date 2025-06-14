@@ -1,0 +1,171 @@
+/* 
+ * Glass Animations Stylesheet
+ * Special animation effects for glassmorphism elements
+ */
+
+/* Shimmer effect for glass cards */
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.glass-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+  pointer-events: none;
+}
+
+/* Glow effect on hover */
+.glass-glow {
+  transition: all 0.3s ease;
+}
+
+.glass-glow:hover {
+  box-shadow: 0 0 20px 0px var(--primary-light);
+}
+
+/* Neon border effect */
+.glass-neon {
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-neon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid transparent;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent), var(--primary));
+  background-size: 400% 100%;
+  animation: borderAnimation 8s linear infinite;
+  margin: -2px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glass-neon:hover::before {
+  opacity: 1;
+}
+
+@keyframes borderAnimation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 400% 0;
+  }
+}
+
+/* Floating effect for cards */
+.glass-float {
+  transition: transform 0.3s ease;
+}
+
+.glass-float:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+/* Parallax effect for glass containers */
+.glass-parallax {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.glass-parallax-inner {
+  transition: transform 0.3s ease;
+}
+
+.glass-parallax:hover .glass-parallax-inner {
+  transform: translateZ(20px);
+}
+
+/* Glass button press effect */
+.btn-glass-press {
+  transition: all 0.2s ease;
+}
+
+.btn-glass-press:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 10px 0 rgba(var(--primary-rgb), 0.5);
+}
+
+/* Glass card flip animation */
+.glass-flip-container {
+  perspective: 1000px;
+}
+
+.glass-flip {
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.glass-flip-container:hover .glass-flip {
+  transform: rotateY(180deg);
+}
+
+.glass-flip-front, .glass-flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.glass-flip-back {
+  transform: rotateY(180deg);
+}
+
+/* Glass ripple effect */
+.glass-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-ripple::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: width 0.6s ease-out, height 0.6s ease-out, opacity 0.6s ease-out;
+  pointer-events: none;
+}
+
+.glass-ripple:active::after {
+  width: 300%;
+  height: 300%;
+  opacity: 1;
+  transition: 0s;
+}

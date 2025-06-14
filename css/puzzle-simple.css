@@ -1,0 +1,225 @@
+/* Simple Clean Starry Night Puzzle Styles */
+
+.puzzle-container {
+    position: relative !important;
+    max-width: 320px !important;
+    margin: 2rem auto !important;
+    padding: 1.5rem !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    display: block !important;
+}
+
+.puzzle-header {
+    text-align: center !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.puzzle-title {
+    font-size: 1.4rem !important;
+    font-weight: 600 !important;
+    color: #2c3e50 !important;
+    margin: 0 !important;
+}
+
+.puzzle-controls {
+    display: flex !important;
+    gap: 0.75rem !important;
+    justify-content: center !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.puzzle-btn {
+    padding: 0.75rem 1.25rem !important;
+    border: none !important;
+    border-radius: 6px !important;
+    font-weight: 500 !important;
+    font-size: 0.875rem !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+}
+
+.puzzle-btn.primary {
+    background: #3498db !important;
+    color: white !important;
+}
+
+.puzzle-btn.primary:hover {
+    background: #2980b9 !important;
+    transform: translateY(-1px) !important;
+}
+
+.puzzle-btn.secondary {
+    background: #95a5a6 !important;
+    color: white !important;
+}
+
+.puzzle-btn.secondary:hover {
+    background: #7f8c8d !important;
+    transform: translateY(-1px) !important;
+}
+
+.puzzle-game {
+    margin-bottom: 1rem !important;
+}
+
+.puzzle-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 2px !important;
+    width: 240px !important;
+    height: 240px !important;
+    margin: 0 auto !important;
+    background: #ecf0f1 !important;
+    border-radius: 6px !important;
+    padding: 4px !important;
+    border: 2px solid #bdc3c7 !important;
+}
+
+.puzzle-piece {
+    position: relative !important;
+    cursor: pointer !important;
+    border-radius: 3px !important;
+    overflow: hidden !important;
+    transition: all 0.2s ease !important;
+    background-size: 300% 300% !important;
+    background-image: url('../images/puzzle/starry-night.jpg') !important;
+    border: 1px solid #34495e !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) !important;
+}
+
+.puzzle-piece:hover {
+    transform: scale(1.03) !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important;
+    border-color: #3498db !important;
+    z-index: 5 !important;
+}
+
+.puzzle-piece.empty {
+    background: #ecf0f1 !important;
+    border: 2px dashed #bdc3c7 !important;
+    cursor: default !important;
+}
+
+.puzzle-piece.empty:hover {
+    transform: none !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) !important;
+    border-color: #bdc3c7 !important;
+}
+
+.puzzle-stats {
+    text-align: center;
+    padding: 1rem 0 0 0;
+    border-top: 1px solid #ecf0f1;
+}
+
+.stat-item {
+    display: inline-block;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: #7f8c8d;
+    font-weight: 500;
+}
+
+.completion-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.completion-modal.show {
+    display: flex;
+}
+
+.completion-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    width: 90%;
+}
+
+.completion-title {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.completion-stats {
+    margin-bottom: 1.5rem;
+    color: #7f8c8d;
+}
+
+.autosolver-panel {
+    display: none;
+}
+
+.solving-indicator {
+    display: none;
+}
+
+.puzzle-progress {
+    display: none;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+    .puzzle-container {
+        max-width: 280px !important;
+        padding: 1rem !important;
+        margin: 1rem auto !important;
+    }
+    
+    .puzzle-grid {
+        width: 200px !important;
+        height: 200px !important;
+    }
+    
+    .puzzle-controls {
+        flex-direction: column !important;
+        gap: 0.5rem !important;
+    }
+    
+    .puzzle-btn {
+        padding: 0.625rem 1rem !important;
+        font-size: 0.825rem !important;
+    }
+}
+
+/* High specificity overrides to ensure styles are applied */
+#projects .puzzle-container,
+.section .puzzle-container,
+div.puzzle-container {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    max-width: 320px !important;
+    margin: 2rem auto !important;
+    padding: 1.5rem !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
